@@ -1,0 +1,294 @@
+// script.js
+document.addEventListener("DOMContentLoaded", () => {
+  // ----- ここから編集してください -----
+  // 各アプリの情報を記述します。
+  // id: HTML要素のID接頭辞として使用 (ユニークな文字列にしてください)
+  // name: アプリの正式名称
+  // description: アプリの簡単な紹介文
+  // images: 表示する画像の配列。各画像は { src: "画像のパス", caption: "画像の説明文" } の形式です。
+  //         画像パスは "images/ファイル名.png" のように指定します。
+  // appUrl: アプリへジャンプするためのURL
+  const appsData = [
+    {
+      id: "chinese-conversation-master", // 例: アプリ1のID
+      name: "App①教科書の会話文",
+      description:
+        "各課の会話文が各ページに掲載されており、それぞれ音声の確認ができます。",
+      images: [
+        // { src: "images/honbunIni.jpg", caption: "初期表示画面：最初の学習内容が表示されます。" },
+        {
+          src: "images/本文初期画面.jpg",
+          caption: "先頭のレッスンの内容が選択されています。学びたいレッスンを選択できます。中国語の文章をクリックすると中国語の音色が流れます。　上部の単語をクリックすれば単語カードアプリにジャンプします。",
+        },
+        
+        
+        // { src: "images/app1_screen3.png", caption: "テスト結果：間違えた単語を復習できます。" }
+      ],
+      appUrl:
+        "https://script.google.com/macros/s/AKfycbwxH4rEBVRedkuirpP7hPv1D0Jh3QpZZSm3wpQg1k04MY-KOFBMjhI7HJhPkNhBp3s/exec", // あなたのアプリ1への実際のURLに置き換えてください
+    },
+    {
+      id: "pinyin-trainer", // 例: アプリ2のID
+      name: "App②単語カード",
+
+      description: "「日本語」ー＞「中国語・ピンイン」の順に、単語カード形式で新出語句が次々と表示され、同時に音声の確認ができます。検索欄で単語を検索することも可能です(電子辞書機能)。「ピンイン入力」にチェックを入れると、ピンインで中国語を入力する問題形式になります。",
+      images: [
+        {
+          src: "images/単語初期画面.jpg",
+          caption: "初期画面　下一个をクリックすれば問題が表示されます。",
+        },
+        
+        {
+          src: "images/単語カード1.jpg",
+          caption:
+            "日本語が表示されます。　下一个をクリックすれば日本語に対応する中国語が表示されます。",
+        },
+        {
+          src: "images/単語カード2.jpg",
+          caption: "中国語が表示されると同時に中国語の音声が流れます。",
+        },
+        
+        
+      ],
+      appUrl: "https://script.google.com/macros/s/AKfycbz0IhZ9xWXwJMPgbMRjBjjWq9zmc1RvjXAZ_cL_ResBLzTtZbEtJAKGCHkPSEkj-g/exec", // あなたのアプリ2への実際のURLに置き換えてください
+    },
+    {
+      id: "pinyin-trainer", // 例: アプリ2のID
+      name: "App➂新単語カード",
+
+      description:
+        "単語学習画面は、主に以下の3つのエリアに分かれています。上部メニュー: 「テストモードへ」の切り替え、レッスン選択、一覧表示。中央「カード」画面: 単語の学習エリア。下部メニュー: 「学習」「My帳」「検索」「登録」の主要機能。",
+      images: [
+        {
+          src: "images/新単語初期画面.jpg",
+          caption: "初期画面　先頭のレッスンの日本語訳がカード形式で表示されます。カードの表を日本語訳にするか中国語にするかの選択もできます",
+        },
+        
+        {
+          src: "images/新単語一覧.jpg",
+          caption:
+            "一覧ボタンをクリックすれば、その課で学習する単語一覧が表示されます。個々の単語の右端に表示されている☆マークをクリックすればMy単語帳に登録できます",
+        },
+        {
+          src: "images/新単語検索.jpg",
+          caption:
+            "検索ボタンをクリックすれば、すべてのレッスンの単語が研削できます。検索文字列が日本語、中国語、ピンインの一部と合致すれば表示されます。",
+        },
+        {
+          src: "images/新単語my単語帳.jpg",
+          caption: "下部メニューの「My帳」をクリックすれば、登録されているMy単語帳が表示されます。フラッシュカード形式と、一覧形式で表示できます。",
+        },
+        
+        
+      ],
+      appUrl: "https://script.google.com/macros/s/AKfycbxnL-p8vg_0bOWnz7A-S2Qfp3atAPzwZcOP66exqwff_4ic9pI1QOVxocyd5tmCfjaXxA/exec", // あなたのアプリ2への実際のURLに置き換えてください
+    },
+    {
+      id: "sentence-builder", // 例: アプリ3のID
+      name: "App④トレーニングクイズ（4択問題）",
+      description:
+        "各々の課で学習したことを4択問題のクイズ形式で表示するアプリです。",
+      images: [
+        {
+          src: "images/四択初期画面.jpg",
+          caption: "クイズ一覧画面が表示されます。学習したいレッスンを選んでタップしましょう。",
+        },
+        {
+          src: "images/四択問題表示.jpg",
+          caption: "問題が表示されて、それに対する解答が表示されます。正しいものを選択してタップする。画面の上部にはAIが作成した画像、スライド、音声解説にアクセスするためのボタンがあります。クリックしてみましょう。",
+        },
+        
+        
+      ],
+      appUrl:
+        "https://hidekitakazawa.github.io/youzhongguo4Taku/", // あなたのアプリ3への実際のURLに置き換えてください
+    },
+    {
+        id: "omakenochizuapp", // 例: アプリ4のID
+        name: "App⑤中国地図",
+        description: "中国大陸について学習するアプリです。中国各地の情報はAIから得ています。関連するyoutubeにジャンプする機能もあります。",
+        images: [
+            { src: "images/紹介画像１.jpg",
+              caption: "アプリの初期画面です。先頭の課の学習ポイントが一覧形式で表示されます。"
+            },
+            
+           
+        ],
+        appUrl: "https://script.google.com/macros/s/AKfycbye75vr_sq9t0qbGTN5fxnvWIl3v4vpQObWKv4rKMYOMQNGfkNU_DJ1lL266JgkaQji7w/exec" // あなたのアプリ4への実際のURLに置き換えてください
+    }
+  ];
+  // ----- ここまで編集してください -----
+
+  const appListContainer = document.getElementById("app-list-container");
+  if (!appListContainer) {
+    console.error(
+      'Error: App list container (id="app-list-container") not found in HTML.',
+    );
+    return;
+  }
+
+  appsData.forEach((appData) => {
+    const showcaseItem = createAppShowcaseElement(appData);
+    appListContainer.appendChild(showcaseItem);
+  });
+
+  function createAppShowcaseElement(appData) {
+    const item = document.createElement("div");
+    item.className = "app-showcase-item";
+    item.id = `${appData.id}-showcase`;
+
+    const nameElement = document.createElement("h2");
+    nameElement.className = "app-name";
+    nameElement.textContent = appData.name;
+    item.appendChild(nameElement);
+
+    const descriptionElement = document.createElement("p");
+    descriptionElement.className = "app-description";
+    descriptionElement.textContent = appData.description;
+    item.appendChild(descriptionElement);
+
+    const sliderElement = document.createElement("div");
+    sliderElement.className = "image-slider";
+
+    const imageContainer = document.createElement("div");
+    imageContainer.className = "image-container";
+    const imageElement = document.createElement("img");
+    imageElement.className = "slider-image";
+    imageElement.alt = `${appData.name} screenshot`; // 初期alt
+    imageContainer.appendChild(imageElement);
+    sliderElement.appendChild(imageContainer);
+
+    const captionElement = document.createElement("p");
+    captionElement.className = "image-caption";
+    sliderElement.appendChild(captionElement);
+
+    const controlsElement = document.createElement("div");
+    controlsElement.className = "slider-controls";
+    const prevButton = document.createElement("button");
+    prevButton.className = "prev-btn";
+    prevButton.textContent = "◀ Back";
+    const nextButton = document.createElement("button");
+    nextButton.className = "next-btn";
+    nextButton.textContent = "Next ▶";
+    controlsElement.appendChild(prevButton);
+    controlsElement.appendChild(nextButton);
+    sliderElement.appendChild(controlsElement);
+
+    item.appendChild(sliderElement);
+
+    const linkElement = document.createElement("a");
+    linkElement.className = "app-link";
+    // linkElement.href = appData.appUrl;
+    linkElement.textContent = `「${appData.name}」へ`;
+    // linkElement.target = '_blank'; // 新しいタブで開く
+    // linkElement.rel = 'noopener noreferrer'; // セキュリティ対策
+    // iPhoneでの動作を考慮し、クリックイベントで window.open を使用
+    linkElement.addEventListener("click", (event) => {
+      event.preventDefault(); // aタグのデフォルトの遷移を防ぎます
+
+      // window.open() を使用して新しいタブで開く
+      // 'noopener,noreferrer' はセキュリティ上の推奨事項です
+      const newWindow = window.open(
+        appData.appUrl,
+        "_blank",
+        "noopener,noreferrer",
+      );
+
+      // ポップアップがブロックされた場合のフォールバック（任意）
+      if (
+        !newWindow ||
+        newWindow.closed ||
+        typeof newWindow.closed === "undefined"
+      ) {
+        // ユーザーに通知するか、同じウィンドウで開くなどの代替手段を検討
+        // alert('新しいタブを開けませんでした。ポップアップブロックの設定を確認してください。\nまたは、以下のURLを直接ブラウザで開いてください：\n' + appData.appUrl);
+        // もしポップアップブロックで開けない場合、同じタブで開くことを試みる
+        // window.location.href = appData.appUrl;
+      }
+    });
+    item.appendChild(linkElement);
+
+    // スライダーの状態とロジック
+    let currentImageIndex = 0;
+
+    function updateSliderDisplay() {
+      if (!appData.images || appData.images.length === 0) {
+        imageContainer.innerHTML =
+          '<p style="padding: 20px; color: #777;">このアプリの画像はまだありません。</p>';
+        captionElement.textContent = "";
+        prevButton.style.display = "none"; // 画像がない場合はボタンも非表示
+        nextButton.style.display = "none";
+        return;
+      }
+
+      imageElement.style.display = "block"; // 画像がある場合は表示
+      prevButton.style.display = "inline-block";
+      nextButton.style.display = "inline-block";
+
+      const currentImage = appData.images[currentImageIndex];
+      imageElement.src = currentImage.src;
+      imageElement.alt =
+        currentImage.caption ||
+        `${appData.name} screen ${currentImageIndex + 1}`;
+      captionElement.textContent = currentImage.caption || "";
+
+      prevButton.disabled = currentImageIndex === 0;
+      nextButton.disabled = currentImageIndex === appData.images.length - 1;
+    }
+
+    prevButton.addEventListener("click", () => {
+      if (currentImageIndex > 0) {
+        currentImageIndex--;
+        updateSliderDisplay();
+      }
+    });
+
+    nextButton.addEventListener("click", () => {
+      if (currentImageIndex < appData.images.length - 1) {
+        currentImageIndex++;
+        updateSliderDisplay();
+      }
+    });
+
+    // スワイプ機能
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const swipeThreshold = 50; // スワイプと判定する最小距離 (px)
+
+    imageContainer.addEventListener(
+      "touchstart",
+      (e) => {
+        if (!appData.images || appData.images.length <= 1) return;
+        touchStartX = e.changedTouches[0].screenX;
+      },
+      { passive: true },
+    );
+
+    imageContainer.addEventListener("touchend", (e) => {
+      if (!appData.images || appData.images.length <= 1) return;
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    });
+
+    function handleSwipe() {
+      const swipeDistance = touchEndX - touchStartX;
+      if (Math.abs(swipeDistance) >= swipeThreshold) {
+        if (swipeDistance < 0) {
+          // 左スワイプ (Next)
+          if (currentImageIndex < appData.images.length - 1) {
+            currentImageIndex++;
+          }
+        } else {
+          // 右スワイプ (Back)
+          if (currentImageIndex > 0) {
+            currentImageIndex--;
+          }
+        }
+        updateSliderDisplay();
+      }
+    }
+
+    updateSliderDisplay(); // 初期表示
+    return item;
+  }
+});
