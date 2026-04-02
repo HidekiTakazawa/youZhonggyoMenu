@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "https://script.google.com/macros/s/AKfycbwxH4rEBVRedkuirpP7hPv1D0Jh3QpZZSm3wpQg1k04MY-KOFBMjhI7HJhPkNhBp3s/exec", // あなたのアプリ1への実際のURLに置き換えてください
     },
     {
-      id: "pinyin-trainer", // 例: アプリ2のID
+      id: "tango-trainer", // 例: アプリ2のID
       name: "App②単語カード",
 
       description: "「日本語」ー＞「中国語・ピンイン」の順に、単語カード形式で新出語句が次々と表示され、同時に音声の確認ができます。検索欄で単語を検索することも可能です(電子辞書機能)。「ピンイン入力」にチェックを入れると、ピンインで中国語を入力する問題形式になります。",
@@ -53,11 +53,11 @@ document.addEventListener("DOMContentLoaded", () => {
       appUrl: "https://script.google.com/macros/s/AKfycbz0IhZ9xWXwJMPgbMRjBjjWq9zmc1RvjXAZ_cL_ResBLzTtZbEtJAKGCHkPSEkj-g/exec", // あなたのアプリ2への実際のURLに置き換えてください
     },
     {
-      id: "pinyin-trainer", // 例: アプリ2のID
+      id: "newtango-trainer", // 例: アプリ2のID
       name: "App➂新単語カード",
 
       description:
-        "単語学習画面は、主に以下の3つのエリアに分かれています。上部メニュー: 「テストモードへ」の切り替え、レッスン選択、一覧表示。中央「カード」画面: 単語の学習エリア。下部メニュー: 「学習」「My帳」「検索」「登録」の主要機能。",
+        "単語学習画面は、主に以下の3つのエリアに分かれています。上部メニュー: 「テストモードへ」の切り替え、レッスン選択、一覧表示。中央「カード」画面: 単語の学習エリア。下部メニュー: 「学習」「My帳」「検索」「登録」の主要機能。　このアプリは艾老师がAIと相談して作られました。",
       images: [
         {
           src: "images/新単語初期画面.jpg",
@@ -109,12 +109,31 @@ document.addEventListener("DOMContentLoaded", () => {
         description: "中国大陸について学習するアプリです。中国各地の情報はAIから得ています。関連するyoutubeにジャンプする機能もあります。",
         images: [
             { src: "images/紹介画像１.jpg",
-              caption: "アプリの初期画面です。先頭の課の学習ポイントが一覧形式で表示されます。"
+              caption: "アプリの初期画面です。いろいろな省の情報を見ることができます。"
             },
             
            
         ],
         appUrl: "https://script.google.com/macros/s/AKfycbye75vr_sq9t0qbGTN5fxnvWIl3v4vpQObWKv4rKMYOMQNGfkNU_DJ1lL266JgkaQji7w/exec" // あなたのアプリ4への実際のURLに置き換えてください
+    },
+    {
+        id: "cyuugokugobunnpou4taku", // 例: アプリ4のID
+        name: "App⑥中国文法4択",
+        description: "中国語の文法知識を4択問題で学習するアプリです。艾老师がnotebookLMというAIを利用して作られました。文法の理解を助ける画像、スライドを見る機能もあります。",
+        images: [
+            { src: "images/文法アプリ初期画面.jpg",
+              caption: "アプリの初期画面です。学習する文法の課題を選択します。"
+            },
+            { src: "images/連動文.jpg",
+              caption: "連動文を選んだ時の画面です。4択問題を楽しむことができます。上部に、画像、スライドのボタンがあります。"
+            },
+            { src: "images/連動文画像.jpg",
+              caption: "画像ボタンをクリックしたときに表示されます。"
+            },
+            
+           
+        ],
+        appUrl: "https://tamagenai.github.io/YUFA/" // あなたのアプリ4への実際のURLに置き換えてください
     }
   ];
   // ----- ここまで編集してください -----
