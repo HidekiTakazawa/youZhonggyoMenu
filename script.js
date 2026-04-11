@@ -134,6 +134,26 @@ document.addEventListener("DOMContentLoaded", () => {
            
         ],
         appUrl: "https://tamagenai.github.io/YUFA/" // あなたのアプリ4への実際のURLに置き換えてください
+    },
+    {
+        id: "ziyouShuShuo", // 例: アプリ4のID
+        name: "App⑦自由说中文",
+        description: "気になる中国語の文章を正しく発音できるかチェックするアプリです。中国語文章を入力して、何回も発音を聞きましょう。その後、中国語の発音練習に進みます。自分の勉強の記録をクリップボードにコピーする機能もあります。",
+        images: [
+            { src: "images/自由说说初期画面.jpg",
+              caption: "アプリの初期画面です。"
+            },
+            { src: "images/自由说说音声入力1.jpg",
+              caption: "聞くボタンで、音声を聞きます。音声入力ボタンをクリックすると、入力モードになり、音声入力ができます。ボタンの背景色は赤に変わり、レコード中と表示されます。"
+            },
+            { src: "images/自由说说音声入力２.jpg",
+              caption: "音声入力が終われば、判定結果が表示されます。"
+            },
+            
+           
+        ],
+        appUrl: "https://hidekitakazawa.github.io/htCyonwenVoiceIn/"
+
     }
   ];
   // ----- ここまで編集してください -----
