@@ -154,6 +154,29 @@ document.addEventListener("DOMContentLoaded", () => {
         ],
         appUrl: "https://hidekitakazawa.github.io/htCyonwenVoiceIn/"
 
+    },
+    {
+        id: "youZhongguohuihua", // 例: アプリ4のID
+        name: "App⑧游中国会话",
+        description:
+        "各課の会話文が各ページに掲載されており、それぞれ音声の確認ができます。",
+      images: [
+        // { src: "images/honbunIni.jpg", caption: "初期表示画面：最初の学習内容が表示されます。" },
+        {
+          src: "images/会話初期画面.jpg",
+          caption:
+            "先頭のレッスンの内容が選択されています。学びたいレッスンを選択できます。中国語の文章をクリックすると中国語の音色が流れます。",
+        },
+        {
+          src: "images/会話音声入力.jpg",
+          caption:
+            "PRACTICEボタンをクリックすると音声入力モードになります。例文を音声入力するとあなたの発音を評価してくれます。上部の音声入力練習記録をコピー　ボタンをキリックするとクリップボードに練習記録をコピーできます。",
+        },
+
+        // { src: "images/app1_screen3.png", caption: "テスト結果：間違えた単語を復習できます。" }
+      ],
+        appUrl: "https://hidekitakazawa.github.io/youZhongguoHuihua/"
+
     }
   ];
   // ----- ここまで編集してください -----
